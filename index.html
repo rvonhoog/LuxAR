@@ -54,20 +54,25 @@
         loader.load(
           modelUrl,
           function (gltf){
-            var mroot = gltf.scene;
-            var bbox = new THREE.Box3().setFromObject(mroot);
-            var cent = bbox.getCenter(new THREE.Vector3());
-            var size = bbox.getSize(new THREE.Vector3());
+//            var mroot = gltf.scene;
+//            var bbox = new THREE.Box3().setFromObject(mroot);
+//            var cent = bbox.getCenter(new THREE.Vector3());
+//            var size = bbox.getSize(new THREE.Vector3());
+//
+//            //Rescale obect to normalized space
+//            var maxAxis = Math.max(size.x, size.y, size.z);
+//            mroot.scale.multiplyScaler(1.0 / maxAxis);
+//            bbox.setFromObject(mroot);
+//            bbox.getCenter(cent);
+//            bbox.getSize(size);
+//            //Reposition to 0, halfY, 0
+//            mroot.position.copy(cent).multiplyScaler(-1);
+//            mroot.position.y-= (size.y * 0.5);
+            gltf.scene.scale.multiplyScalar(1 / 100);
+            gltf.scene.position.x = 20;
+            gltf.scene.position.z = -20;
 
-            //Rescale obect to normalized space
-            var maxAxis = Math.max(size.x, size.y, size.z);
-            mroot.scale.multiplyScaler(1.0 / maxAxis);
-            bbox.setFromObject(mroot);
-            bbox.getCenter(cent);
-            bbox.getSize(size);
-            //Reposition to 0, halfY, 0
-            mroot.position.copy(cent).multiplyScaler(-1);
-            mroot.position.y-= (size.y * 0.5);
+
             scene.add(gltf.scene);
             console.log("Model Loaded");
           },
