@@ -51,9 +51,9 @@
         
         const modelUrl = 'https://raw.githubusercontent.com/rvonhoog/LuxAR/main/main2.gltf';
         loader = new THREE.GLTFLoader();
-//        loader.load(
-//          modelUrl,
-//          function (gltf){
+        loader.load(
+          modelUrl,
+          function (gltf){
 //            var mroot = gltf.scene;
 //            var bbox = new THREE.Box3().setFromObject(mroot);
 //            var cent = bbox.getCenter(new THREE.Vector3());
@@ -73,16 +73,16 @@
 //            gltf.scene.position.z = -20;
 
 
-//            scene.add(gltf.scene);
-//            console.log("Model Loaded");
-//          },
-//          function (xhr){
-//            //Loading...
-//          },
-//          function (error){
-//            console.error(error);
-//          }
-//        )
+            scene.add(gltf.scene);
+            console.log("Model Loaded");
+          },
+          function (xhr){
+            //Loading...
+          },
+          function (error){
+            console.error(error);
+          }
+        )
 
 
         controller = renderer.xr.getController(0);
