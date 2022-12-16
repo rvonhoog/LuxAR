@@ -118,7 +118,7 @@
         // reticle.add(new THREE.AxesHelper(1));
       }
 
-      function onSelect(gtlf) {        
+      function onSelect() {        
         if (reticle.visible) {
           // cone added at the point of a hit test
           // replace the next lines to add your own object in space
@@ -132,7 +132,7 @@
           mesh.position.setFromMatrixPosition(reticle.matrix);
           mesh.quaternion.setFromRotationMatrix(reticle.matrix);
 
-          scene.add(gtlf.scene); 
+          scene.add(mesh); 
         }
       }
 
