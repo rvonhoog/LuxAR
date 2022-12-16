@@ -73,7 +73,7 @@
 //            gltf.scene.position.z = -20;
 
 
-            scene.add(gltf.scene);
+//            scene.add(gltf.scene);
             console.log("Model Loaded");
           },
           function (xhr){
@@ -132,7 +132,7 @@
           mesh.position.setFromMatrixPosition(reticle.matrix);
           mesh.quaternion.setFromRotationMatrix(reticle.matrix);
 
-          scene.add(mesh); 
+          scene.add(gltf.scene); 
         }
       }
 
